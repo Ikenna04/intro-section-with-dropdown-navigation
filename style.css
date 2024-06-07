@@ -1,0 +1,568 @@
+/* | IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+/* | CSS RESET  */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* | UTILITY CLASSES */
+img {
+	display: block;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+li {
+	list-style-type: none;
+}
+
+.cp {
+	cursor: pointer;
+}
+
+.mobile {
+	display: none;
+}
+
+li.order {
+	order: 1;
+}
+
+.btn {
+	border-radius: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* | VARIABLES */
+:root {
+	/* | COLORS  */
+	--white: hsl(0, 0%, 100%);
+	--almost-white: hsl(0, 0%, 98%);
+	--medium-gray: hsl(0, 0%, 41%);
+	--almost-black: hsl(0, 0%, 8%);
+	--almost-black-op: hsla(0, 0%, 8%, 0.3);
+
+	/* | FONTS  */
+	--nav-font: 500 16px 'Epilogue';
+	--body-font: 500 20px 'Epilogue';
+	--h1-font: 700 90px 'Epilogue';
+}
+
+/* | GENERAL STYLES */
+html {
+	max-width: 100%;
+	height: max(900px, 100%);
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background-color: var(--almost-white);
+	font: var(--body-font);
+	color: var(--medium-gray);
+	line-height: 1.5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav {
+	width: 100%;
+	padding: 32px 40px;
+	font: var(--nav-font);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 64px;
+	position: absolute;
+	top: 0;
+}
+
+.nav > li {
+	width: 100%;
+}
+
+.nav > img {
+	width: 83px;
+	height: auto;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 50px;
+}
+
+.dropdown-area,
+.register {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+}
+
+.dropdown-area > li {
+	position: relative;
+}
+
+.dropdown-area > li p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+}
+
+img[alt='Arrow'] {
+	width: 10px;
+	height: auto;
+}
+
+img[alt='Arrow'].disn {
+	display: none;
+}
+
+:is(#feature:checked, #company:checked) ~ label p .disf {
+	display: none;
+}
+
+:is(#feature:checked, #company:checked) ~ label p .disn {
+	display: block;
+}
+
+.nav p:hover {
+	color: var(--almost-black);
+}
+
+input {
+	display: none;
+}
+
+.dropdown {
+	padding: 24px;
+	border-radius: 8px;
+	background-color: var(--white);
+	box-shadow: 0 0 200px -50px var(--almost-black);
+	display: none;
+	flex-flow: column;
+	gap: 18px;
+	position: absolute;
+	top: 36px;
+}
+
+:is(#feature:checked, #company:checked) ~ .dropdown {
+	display: flex;
+}
+
+.dropdown img {
+	height: 16px;
+	width: auto;
+}
+
+.first-dd {
+	right: 0;
+}
+
+.last-dd {
+	left: 0;
+}
+
+.dropdown li {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.register li:last-child {
+	width: 104px;
+	height: 42px;
+	border: 1px solid var(--medium-gray);
+}
+
+.register li:last-child:hover {
+	border: 1px solid var(--almost-black);
+	color: var(--almost-black);
+}
+
+.main {
+	padding: 130px 164px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 100px;
+}
+
+.main > * {
+	width: 50%;
+}
+
+.img-section {
+	margin-right: -34px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.img-section img {
+	width: 480px;
+	height: auto;
+}
+
+.text-area {
+	display: flex;
+	flex-flow: column;
+	gap: 105px;
+}
+
+h1 {
+	font: var(--h1-font);
+	color: var(--almost-black);
+}
+
+.text-area > li:nth-child(2) {
+	max-width: 425px;
+	margin-top: -67px;
+	margin-bottom: -50px;
+}
+
+.text-area > li:nth-child(3) {
+	width: 163px;
+	height: 56px;
+	background-color: var(--almost-black);
+	color: var(--white);
+}
+
+.text-area > li:nth-child(3):hover {
+	background-color: var(--almost-white);
+	color: var(--almost-black);
+	border: 1px solid var(--almost-black);
+}
+
+.sponsors {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.sponsors li:first-child {
+	width: 114px;
+}
+
+.sponsors li:nth-child(2) {
+	width: 73px;
+}
+
+.sponsors li:nth-child(3) {
+	width: 90px;
+}
+
+.sponsors li:nth-child(4) {
+	width: 82px;
+}
+
+.sponsors img {
+	width: 100%;
+}
+
+@media screen and (max-width: 1150px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--h1-font: 700 60px 'Epilogue';
+	}
+
+	/* | GENERAL STYLES */
+
+	.main {
+		padding: 130px 40px;
+		gap: 50px;
+	}
+
+	.main > * {
+		width: auto;
+	}
+
+	.img-section {
+		margin: 0;
+		justify-content: center;
+	}
+
+	.img-section img {
+		width: 350px;
+	}
+
+	.text-area {
+		gap: 50px;
+	}
+
+	.text-area > li:nth-child(2) {
+		max-width: 80%;
+		margin-top: -20px;
+		margin-bottom: -10px;
+	}
+
+	.sponsors {
+		max-width: 80%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-font: 500 16px 'Epilogue';
+		--h1-font: 700 50px 'Epilogue';
+	}
+
+	/* | GENERAL STYLES */
+	html {
+		height: max(740px, 100%);
+	}
+
+	.nav {
+		gap: 40px;
+	}
+
+	.nav > img {
+		width: 80px;
+	}
+
+	.dropdown-area,
+	.register {
+		gap: 30px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	/* | UTILITY CLASSES */
+	.mobile {
+		display: block;
+	}
+
+	.desktop {
+		display: none;
+	}
+
+	li.order {
+		order: 0;
+	}
+
+	.btn {
+		border-radius: 0.8em;
+	}
+
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--nav-font: 500 1em 'Epilogue';
+		--body-font: 500 32px 'Epilogue';
+		--h1-font: 700 2.6em 'Epilogue';
+	}
+
+	/* | GENERAL STYLES */
+	html,
+	body {
+		height: 24.4em;
+		flex-flow: column;
+		justify-content: flex-start;
+		text-align: center;
+	}
+
+	.nav {
+		padding: 1.5em 1em;
+		justify-content: space-between;
+		position: static;
+	}
+
+	.nav li {
+		width: auto;
+	}
+
+	.nav > img {
+		width: 5.2em;
+	}
+
+	.nav-links-li {
+		width: 100%;
+		height: max(100%, 1560px);
+		background-color: var(--almost-black-op);
+		display: none;
+		justify-content: flex-end;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.nav-links {
+		width: 64%;
+		height: 100%;
+		padding: 1.4em 1.3em;
+		background-color: var(--almost-white);
+		flex-flow: column;
+		justify-content: flex-start;
+		align-items: flex-end;
+		gap: 2.3em;
+		position: fixed;
+	}
+
+	.nav-links img[alt='Close Icon'] {
+		width: 1.5em;
+		height: auto;
+	}
+
+	img[alt='Menu Icon'] {
+		width: 2em;
+		height: auto;
+	}
+
+	.nav-links li {
+		width: 100%;
+	}
+
+	.dropdown-area,
+	.register {
+		flex-flow: column;
+		gap: 1.6em;
+	}
+
+	.dropdown-area > li {
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 1.7em;
+	}
+
+	.dropdown-area > li p {
+		gap: 1em;
+	}
+
+	img[alt='Arrow'] {
+		width: 0.6em;
+	}
+
+	.dropdown {
+		margin-left: 1.5em;
+		padding: 0;
+		border-radius: 0;
+		background-color: inherit;
+		box-shadow: none;
+		gap: 1.6em;
+		position: static;
+	}
+
+	.dropdown img {
+		height: 1.3em;
+	}
+
+	.dropdown li {
+		gap: 0.9em;
+	}
+
+	.register li:last-child {
+		width: 100%;
+		height: 2.6em;
+		border: 0.12em solid var(--medium-gray);
+	}
+
+	.register li:last-child:hover {
+		border: 0.12em solid var(--almost-black);
+	}
+
+	img [alt='Menu Icon'] {
+		width: 2em;
+		height: auto;
+	}
+
+	.main {
+		padding: 0;
+		padding-bottom: 5.8em;
+		flex-flow: column;
+		align-items: center;
+		gap: 3.1em;
+	}
+
+	.main > * {
+		width: 100%;
+	}
+
+	.img-section img {
+		width: 100%;
+	}
+
+	.text-area {
+		padding-inline: 1em;
+		align-items: center;
+		gap: 3em;
+	}
+
+	.text-area li {
+		width: 100%;
+	}
+
+	.text-area > li:nth-child(2) {
+		max-width: 100%;
+		margin-top: -1.9em;
+		margin-bottom: -1.1em;
+	}
+
+	.text-area > li:nth-child(3) {
+		width: 8.5em;
+		height: 3em;
+	}
+
+	.text-area > li:nth-child(3):hover {
+		border: 0.12em solid var(--almost-black);
+	}
+
+	.sponsors {
+		max-width: 100%;
+		flex-wrap: nowrap;
+		gap: 0.6em;
+	}
+
+	.sponsors li:first-child {
+		width: 5.1em;
+	}
+
+	.sponsors li:nth-child(2) {
+		width: 3.3em;
+	}
+
+	.sponsors li:nth-child(3) {
+		width: 4.1em;
+	}
+
+	.sponsors li:nth-child(4) {
+		width: 3.7em;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-font: 500 20px 'Epilogue';
+	}
+}
+
+@media screen and (max-width: 375px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-font: 500 16px 'Epilogue';
+	}
+}
+
+.show {
+	display: flex;
+}
